@@ -19,7 +19,8 @@ determine the direction of rotation. This method seems to cope with missed patte
 
 The code, as presented, generates a signal on a specific frequency. If you want an offset simply modify the 
 Main Loop to read:
-frequency = frequency + (encoder * step_size) + offset; //offset needs to be defined
- 
+
+clockgen.set_freq((frequency + offset), SI5351_PLL_FIXED, SI5351_CLK0); // where "offset" has been defined in Hz.
+
 Bibliography:
 [1] Signal generator using Adafruit clock generator. (http://github.com/gerryk/signal_generator)
